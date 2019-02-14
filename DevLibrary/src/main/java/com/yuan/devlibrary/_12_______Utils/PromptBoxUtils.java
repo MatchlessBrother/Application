@@ -81,7 +81,7 @@ public class PromptBoxUtils
     /****与服务器开始通讯时默认弹出的对话框1：代表的是圆圈旋转进度框,2：代表的是飞机飞行进度框*****/
     public static BaseProgressDialog showLoadingDialog(Context context,boolean isCanceledOnTouchOutside,BaseProgressDialog.OnClickOutsideListener onClickOutsideListener)
     {
-        return showLoadingDialog(context,"请求中……",1,110,isCanceledOnTouchOutside,onClickOutsideListener);
+        return showLoadingDialog(context,"请求中……",2,110,isCanceledOnTouchOutside,onClickOutsideListener);
     }
 
     /****与服务器开始通讯时默认弹出的对话框1：代表的是圆圈旋转进度框,2：代表的是飞机飞行进度框*****/
@@ -100,17 +100,12 @@ public class PromptBoxUtils
             contentView = ResourceUtils.generateView(context,R.layout.inflater_progressdialogdefault);
             imageView = (ImageView) contentView.findViewById(R.id.defaultthemeimg);
             animation = new AnimationDrawable();
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault1),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault3),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault7),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault9),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault13),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault15),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault19),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault21),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault25),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault27),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault30),45);
+            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault3),52);
+            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault7),52);
+            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault13),52);
+            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault17),52);
+            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault24),52);
+            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogdefault27),52);
             animation.setOneShot(false);
             imageView.setBackgroundDrawable(animation);
             if (animation != null && !animation.isRunning()) animation.start();
@@ -120,23 +115,12 @@ public class PromptBoxUtils
             contentView = ResourceUtils.generateView(context,R.layout.inflater_progressdialogplane);
             imageView = (ImageView) contentView.findViewById(R.id.planethemeimg);
             animation = new AnimationDrawable();
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane1),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane3),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane5),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane7),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane9),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane11),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane13),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane15),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane17),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane19),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane21),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane23),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane25),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane27),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane29),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane31),45);
-            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane32),45);
+            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane3),52);
+            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane9),52);
+            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane15),52);
+            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane21),52);
+            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane27),52);
+            animation.addFrame(context.getResources().getDrawable(R.drawable.progressdialogplane32),52);
             animation.setOneShot(false);
             imageView.setBackgroundDrawable(animation);
             if (animation != null && !animation.isRunning()) animation.start();
