@@ -7,11 +7,11 @@ def dev_keyStoreProperties = new Properties()
 keyStoreProperties.load(new FileInputStream(keyStorePropertiesFile))
 dev_keyStoreProperties.load(new FileInputStream(dev_keyStorePropertiesFile))
 
-android {
+android{
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
-    defaultConfig {
+    defaultConfig{
         applicationId "company.petrifaction.boss"
         versionCode  rootProject.ext.versionCode
         versionName  rootProject.ext.versionName
@@ -37,7 +37,7 @@ android {
     }
 
     signingConfigs{
-        release {
+        release{
             keyAlias keyStoreProperties['KeyAlias']
             storeFile file(keyStoreProperties['StoreFile'])
             keyPassword keyStoreProperties['KeyPassword']
@@ -52,8 +52,8 @@ android {
         }
     }
 
-    buildTypes {
-        release {
+    buildTypes{
+        release{
             debuggable false
             jniDebuggable false
             minifyEnabled false
@@ -65,7 +65,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
-        debug {
+        debug{
             debuggable true
             jniDebuggable true
             minifyEnabled false
@@ -79,14 +79,14 @@ android {
     }
 
     /**加快dex速度*/
-    dexOptions {
+    dexOptions{
         preDexLibraries true
         maxProcessCount 8
         javaMaxHeapSize "2048m"
     }
 }
 
-dependencies {
+dependencies{
     implementation project(':DevLibrary')
     testImplementation 'junit:junit:4.12'
     implementation 'me.jessyan:autosize:1.1.2'
