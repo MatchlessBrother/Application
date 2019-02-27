@@ -156,6 +156,13 @@
 -keepnames class * extends com.gyf.barlibrary.**{*;}
 -keepnames class * implements com.gyf.barlibrary.**{*;}
 -keepnames interface * extends com.gyf.barlibrary.**{*;}
+#------AndroidAutoSize------#
+-dontwarn me.jessyan.autosize.**
+-keep class me.jessyan.autosize.**{*;}
+-keep interface me.jessyan.autosize.**{*;}
+-keepnames class * extends me.jessyan.autosize.**{*;}
+-keepnames interface * extends me.jessyan.autosize.**{*;}
+-keepnames interface * implements me.jessyan.autosize.**{*;}
 #---------PhotoView---------#
 -dontwarn com.github.chrisbanes.photoview.**
 -keepnames class com.github.chrisbanes.photoview.**{*;}
