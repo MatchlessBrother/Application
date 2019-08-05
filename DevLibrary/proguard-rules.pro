@@ -33,22 +33,33 @@
 
 
 
+
 ####################################################################################################
-##########################################本地混淆配置###############################################
-#----------------------------------android.support包中的所有类和接口---------------------------------
+##########################################本地混淆配置##############################################
+#-------------------------------------androidX包中的所有类和接口------------------------------------
+-dontwarn androidx.**
+-dontnote androidx.**
+-keep class androidx.** {*;}
+-keep interface androidx.** {*;}
+-keep class * implements androidx.**
+-keep public class * extends androidx.**
+-dontwarn com.google.android.material.**
+-dontnote com.google.android.material.**
+-keep class com.google.android.material.** {*;}
+#----------------------------------android.support包中的所有类和接口--------------------------------
 -dontwarn android.support.**
 -keep class android.support.**{*;}
 -keep interface android.support.**{*;}
 -keep class * extends android.support.**{*;}
 -keep class * implements android.support.**{*;}
-#----------------------------------------Application与四大组件---------------------------------------
+#----------------------------------------Application与四大组件--------------------------------------
 -keep class * extends android.app.Fragment{*;}
 -keepnames class * extends android.app.Application{*;}
 -keepclassmembernames class * extends android.app.Service{*;}
 -keepclassmembernames class * extends android.content.ContentProvider{*;}
 -keepclassmembernames class * extends android.content.BroadcastReceiver{*;}
 -keepclassmembernames class * extends android.app.Activity{public void *(android.view.View);}
-#-----------------------View控件(系统View与自定义View等等)以及上面它的OnClick函数---------------------
+#-----------------------View控件(系统View与自定义View等等)以及上面它的OnClick函数-------------------
 -keep class android.view.View{*;}
 -keep class * extends android.view.View{
     *** is*();
@@ -59,7 +70,7 @@
     public <init>(android.content.Context,android.util.AttributeSet,int);
     public <init>(android.content.Context,android.util.AttributeSet,int,int);
 }
-#-------------------------------Webview和WebviewClient以及Js的交互-----------------------------------
+#-------------------------------Webview和WebviewClient以及Js的交互----------------------------------
 -keep class android.webkit.WebView{*;}
 -keep class * extends android.webkit.WebView{*;}
 -keepclassmembers class * extends android.webkit.webViewClient{
@@ -76,7 +87,7 @@
 -keepclassmembers class **.R$*{
     public static <fields>;
 }
-#----------------------------------------JNI保留本地所有native方法-----------------------------------
+#----------------------------------------JNI保留本地所有native方法----------------------------------
 -keepclasseswithmembernames class *{
     native <methods>;
 }
@@ -85,7 +96,7 @@
     public static **[] values();
     public static ** valueOf(java.lang.String);
 }
-#------------------------------------------禁止Log打印任何数据---------------------------------------
+#------------------------------------------禁止Log打印任何数据--------------------------------------
 -assumenosideeffects class android.util.Log{
    public static *** v(...);
    public static *** d(...);
@@ -120,8 +131,8 @@
 
 
 ####################################################################################################
-##########################################远端混淆配置###############################################
-#-------------------------------------------第三方库-------------------------------------------------
+##########################################远端混淆配置##############################################
+#-------------------------------------------第三方库------------------------------------------------
 #------------Zxing----------#
 -dontwarn com.google.zxing.**
 -keepnames class com.google.zxing.**{*;}
